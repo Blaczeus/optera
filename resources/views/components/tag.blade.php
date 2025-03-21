@@ -1,4 +1,4 @@
-@props(['size' => 'base'])
+@props(['size' => 'base', 'tag'])
 
 @php
 
@@ -9,8 +9,8 @@
   }
 
   if ($size === 'small') {
-    $classes .= " px-3 py-[5px] text-[12px]";
+    $classes .= " px-3 py-[5px] text-[10px]";
   }
 @endphp
 
-<a href="#" class= " {{$classes}} " >{{ $slot }}</a>
+<a href="/tags/{{ strtolower($tag->name) }}" class= " {{$classes}} " >{{ $tag->name }}</a>
